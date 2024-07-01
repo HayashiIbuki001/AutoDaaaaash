@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
 
     public float speed;
     public float jumpPower;
+    public float secondJumpPower;
 
     /// <summary>
     /// 2段ジャンプができるか切り替える
@@ -55,7 +56,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (jumpTrigger == true)
         {
-            if (jumpTime < 2)
+            if (jumpTime == 0)
             {
                 //PlayerRbに力を加える
                 PlayerRb.AddForce(Vector2.up * jumpPower * 10);
@@ -63,8 +64,15 @@ public class PlayerMove : MonoBehaviour
                 //ジャンプ回数を1追加
                 jumpTime += 1;
             }
+            else if (jumpTime == 1)
+            {
+                //PlayerRbに力を加える
+                PlayerRb.AddForce(Vector2.up * jumpPower * 10 * secondJumpPower);
 
-            if (jumpTime == 2)
+                //ジャンプ回数を1追加
+                jumpTime += 1;
+            }
+            else if (jumpTime == 2)
             {
                 jumpTrigger = false;
             }
