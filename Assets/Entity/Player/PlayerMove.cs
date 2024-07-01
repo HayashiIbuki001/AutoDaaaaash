@@ -56,6 +56,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (jumpTrigger == true)
         {
+            //一段目
             if (jumpTime == 0)
             {
                 //PlayerRbに力を加える
@@ -64,6 +65,7 @@ public class PlayerMove : MonoBehaviour
                 //ジャンプ回数を1追加
                 jumpTime += 1;
             }
+            //二段目
             else if (jumpTime == 1)
             {
                 //PlayerRbに力を加える
@@ -72,6 +74,7 @@ public class PlayerMove : MonoBehaviour
                 //ジャンプ回数を1追加
                 jumpTime += 1;
             }
+            //二段ジャンプ後
             else if (jumpTime == 2)
             {
                 jumpTrigger = false;
