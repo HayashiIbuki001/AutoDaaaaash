@@ -20,6 +20,7 @@ public class FallController : MonoBehaviour
         {
             Destroy(this.gameObject);
             Debug.Log("—Ž‰º‚µ‚½");
+
         }
     }
 }
